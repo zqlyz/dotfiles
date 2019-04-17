@@ -36,6 +36,12 @@ set nowrap
 set cursorline 
 "set cursorcolumn
 
+"使用相对行号
+set nu
+set relativenumber
+
+
+
 
 " Vundle插件加载
 " =============================
