@@ -21,14 +21,14 @@ set wildmenu
 set path+=**
 
 " 设置缩进大小
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 " 用空格代替tab, 取消为noexpandtab
 set expandtab
 
-" 不要换行
-set nowrap
+" 换行
+set wrap
 
 " 行列高亮
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
@@ -40,8 +40,20 @@ set cursorline
 set nu
 set relativenumber
 
+" 高亮搜索
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set smartcase
 
+" keymap
+noremap J 5j
+noremap K 5k
 
+map RF :source $MYVIMRC<CR>
+map CO :edit $MYVIMRC<CR>
+map ss :w<CR>
 
 " Vundle插件加载
 " =============================
@@ -51,7 +63,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'morhetz/gruvbox'
+Plugin 'joshdick/onedark.vim'
 
 Plugin 'jiangmiao/auto-pairs'
 
@@ -69,8 +81,20 @@ nnoremap <F3> :NERDTreeToggle<CR>
 " 当只有NERDTree的时候自动关闭
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" onedark.vim override: Don't set a background color when running in a terminal;
+" just use the terminal's background color
+" `gui` is the hex color code used in GUI mode/nvim true-color mode
+" `cterm` is the color code used in 256-color mode
+" `cterm16` is the color code used in 16-color mode
+if (has("autocmd") && !has("gui_running"))
+  augroup colorset
+    autocmd!
+    let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
+    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
+  augroup END
+endif
+
 " 语法高亮 
 syntax enable
-set background=dark
-let g:gruvbox_italic=1
-colorscheme gruvbox
+let g:airline_theme='onedark'
+colorscheme onedark
