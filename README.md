@@ -1,6 +1,9 @@
 # Toffy's Dotfiles
 
 ## Usage
+
+firstly ,install zsh and oh-my-zsh.
+
 ```bash
 git clone --recursive https://github.com/zqlyz/dotfiles.git
 cd dotfiles
