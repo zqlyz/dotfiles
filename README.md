@@ -19,13 +19,12 @@ These are some software need to be installed.
 * i3
 * feh
 * rofi
-* fonts
-** noto-sans-cjk
-** font-awesome
-** nerd-font(Source Code Pro)
+* noto-sans-cjk
+* font-awesome
+* nerd-font(Source Code Pro)
 * vim
 * compton
 * zsh (oh-my-zsh)
 * polybar
 * ranger
-** w3m
+* w3m
