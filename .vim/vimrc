@@ -1,3 +1,4 @@
+let mapleader=" "
 " 使用vim 模式
 set nocompatible
 
@@ -51,9 +52,26 @@ set smartcase
 noremap J 5j
 noremap K 5k
 
+map 9 $
+
 map RF :source $MYVIMRC<CR>
-map CO :edit $MYVIMRC<CR>
-map ss :w<CR>
+map EC :edit $MYVIMRC<CR>
+
+set splitright
+set splitbelow
+map sh :vsplit<CR>
+map sv :split<CR>
+
+map <LEADER>h <C-w>h
+map <LEADER>j <C-w>j
+map <LEADER>k <C-w>k
+map <LEADER>l <C-w>l
+
+
+map <LEADER><up> :res +5<CR>
+map <LEADER><down> :res -5<CR>
+map <LEADER><left> :vertical resize-5<CR>
+map <LEADER><right> :vertical resize+5<CR>
 
 " Vundle插件加载
 " =============================
@@ -61,7 +79,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'joshdick/onedark.vim'
 
@@ -72,6 +90,11 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+Plugin 'dense-analysis/ale'
+
+Plugin 'majutsushi/tagbar'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 "==============================
