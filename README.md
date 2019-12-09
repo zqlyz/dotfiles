@@ -17,7 +17,7 @@ then use vim
 :PluginInstall
 ```
 
-## Needed
+## Requirerment
 These are some software need to be installed.
 * i3
 * feh
@@ -31,3 +31,7 @@ These are some software need to be installed.
 * polybar
 * ranger
 * w3m
+* ctags
+* cmake
+* git
+* nodejs and npm

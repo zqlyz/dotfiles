@@ -1,4 +1,4 @@
-let mapleader=" "
+let mapleader= ' '
 " 使用vim 模式
 set nocompatible
 
@@ -38,12 +38,12 @@ set cursorline
 "set cursorcolumn
 
 "使用相对行号
-set nu
+set number
 set relativenumber
 
 " 高亮搜索
 set hlsearch
-exec "nohlsearch"
+exec 'nohlsearch'
 set incsearch
 set ignorecase
 set smartcase
@@ -52,10 +52,9 @@ set smartcase
 noremap J 5j
 noremap K 5k
 
-map 9 $
-
 map RF :source $MYVIMRC<CR>
 map EC :edit $MYVIMRC<CR>
+map Q :q<CR>
 
 set splitright
 set splitbelow
@@ -73,35 +72,66 @@ map <LEADER><down> :res -5<CR>
 map <LEADER><left> :vertical resize-5<CR>
 map <LEADER><right> :vertical resize+5<CR>
 
-" Vundle插件加载
-" =============================
+map <LEADER>/ :nohlsearch<CR>
+
+map to :tabe<CR>
+map tj :+tabnext<CR>
+map tk :-tabnext<CR>
+
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
+
 filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
-Plugin 'joshdick/onedark.vim'
+Plug 'VundleVim/Vundle.vim'
 
-Plugin 'jiangmiao/auto-pairs'
+Plug 'joshdick/onedark.vim'
 
-Plugin 'vim-airline/vim-airline'
+Plug 'jiangmiao/auto-pairs'
 
-Plugin 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
 
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree'
 
-Plugin 'dense-analysis/ale'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plugin 'majutsushi/tagbar'
+Plug 'dense-analysis/ale'
 
-call vundle#end()            " required
+Plug 'majutsushi/tagbar'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
 filetype plugin indent on    " required
+
 "==============================
+" tagbar
+nmap <F3> :TagbarToggle<CR>
+
 
 " NERDTree 配置, 设置F3为开关按键
-nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
 " 当只有NERDTree的时候自动关闭
+
+" ALE setting
+nmap <F4> :ALEToggle<CR>
+nmap sp <Plug>(ale_previous_wrap)
+nmap sn <Plug>(ale_next_wrap)
+let g:ale_lint_on_enter = 0
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " onedark.vim override: Don't set a background color when running in a terminal;
