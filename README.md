@@ -37,3 +37,5 @@ There are some software need to be installed.
 * git
 * nodejs and npm
 * fzf
+## Option install
+* nvim
