@@ -49,34 +49,33 @@ set ignorecase
 set smartcase
 
 " keymap
-noremap J 5j
-noremap K 5k
-
-map RF :source $MYVIMRC<CR>
-map EC :edit $MYVIMRC<CR>
-map Q :q<CR>
+nmap RF :source $MYVIMRC<CR>
+nmap EC :edit $MYVIMRC<CR>
+nmap Q :q<CR>
 
 set splitright
 set splitbelow
-map sh :vsplit<CR>
-map sv :split<CR>
+nmap sh :vsplit<CR>
+nmap sv :split<CR>
 
-map <LEADER>h <C-w>h
-map <LEADER>j <C-w>j
-map <LEADER>k <C-w>k
-map <LEADER>l <C-w>l
+nmap <LEADER>h <C-w>h
+nmap <LEADER>j <C-w>j
+nmap <LEADER>k <C-w>k
+nmap <LEADER>l <C-w>l
 
 
-map <LEADER><up> :res +5<CR>
-map <LEADER><down> :res -5<CR>
-map <LEADER><left> :vertical resize-5<CR>
-map <LEADER><right> :vertical resize+5<CR>
+nmap <LEADER><up> :res +5<CR>
+nmap <LEADER><down> :res -5<CR>
+nmap <LEADER><left> :vertical resize-5<CR>
+nmap <LEADER><right> :vertical resize+5<CR>
 
-map <LEADER>/ :nohlsearch<CR>
+nmap <LEADER>/ :nohlsearch<CR>
 
-map to :tabe<CR>
-map tj :+tabnext<CR>
-map tk :-tabnext<CR>
+nmap to :tabe<CR>
+nmap tj :+tabnext<CR>
+nmap tk :-tabnext<CR>
+
+nmap <C-P> :FZF<CR>
 
 
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -98,11 +97,17 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'vim-airline/vim-airline'
 
+" some nerdtree-relative plugin
 Plug 'scrooloose/nerdtree'
-
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 
-Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Plug 'ctrlpvim/ctrlp.vim'
+
+" Plug 'dense-analysis/ale'
 
 Plug 'majutsushi/tagbar'
 
@@ -115,24 +120,27 @@ filetype plugin indent on    " required
 " tagbar
 nmap <F3> :TagbarToggle<CR>
 
-
 " NERDTree 配置, 设置F3为开关按键
 nnoremap <F2> :NERDTreeToggle<CR>
 " 当只有NERDTree的时候自动关闭
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" airline
+let g:airline_powerline_fonts=1
+
 
 " ALE setting
-nmap <F4> :ALEToggle<CR>
-nmap sp <Plug>(ale_previous_wrap)
-nmap sn <Plug>(ale_next_wrap)
-let g:ale_lint_on_enter = 0
-let g:airline#extensions#ale#enabled = 1
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" nmap <F4> :ALEToggle<CR>
+" nmap sp <Plug>(ale_previous_wrap)
+" nmap sn <Plug>(ale_next_wrap)
+" let g:ale_lint_on_enter = 0
+" let g:airline#extensions#ale#enabled = 1
+" let g:ale_sign_error = '>>'
+" let g:ale_sign_warning = '--'
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " onedark.vim override: Don't set a background color when running in a terminal;
 " just use the terminal's background color

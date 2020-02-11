@@ -98,5 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# My env
-source ~/.my_env
+# My alias
+source ~/.my_alias
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

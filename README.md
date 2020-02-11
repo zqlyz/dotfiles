@@ -14,16 +14,17 @@ then use vim
 
 
 ```
-:PluginInstall
+:PlugInstall
 ```
 
-## Requirerment
-These are some software need to be installed.
+## Requirement
+There are some software need to be installed.
 * i3
 * feh
 * rofi
 * noto-sans-cjk
 * font-awesome
+* powerline-fonts
 * nerd-font(Source Code Pro)
 * vim
 * compton
@@ -35,3 +36,4 @@ These are some software need to be installed.
 * cmake
 * git
 * nodejs and npm
+* fzf
