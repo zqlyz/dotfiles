@@ -1,0 +1,7 @@
+.git/
+install.sh
+nodejs-install.sh
+neovim/
+node_modules/
+package.json
+package-lock.json

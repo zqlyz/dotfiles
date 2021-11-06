@@ -4,7 +4,6 @@ alias grep='grep --color=auto'
 alias l.='ls -d .* --color=auto'
 alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
-alias which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot'
 alias xzegrep='xzegrep --color=auto'
 alias xzfgrep='xzfgrep --color=auto'
 alias xzgrep='xzgrep --color=auto'
@@ -22,6 +21,5 @@ else
    alias vi='nvim'
    alias vim='nvim'
 fi
-# c/c++ 相关
-LD_LIBRARY_PATH="/usr/local/lib:/usr/lib:/lib:$LD_LIBRARY_PATH";
-export LD_LIBRARY_PATH;
+
+alias pc4='proxychains4'

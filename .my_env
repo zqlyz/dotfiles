@@ -1,0 +1,10 @@
+# User specific environment
+PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH
+
+#use vim
+export EDITOR=nvim
+
+# c/c++ 相关
+LD_LIBRARY_PATH="/usr/local/lib:/usr/lib:/lib:$LD_LIBRARY_PATH";
+export LD_LIBRARY_PATH;
