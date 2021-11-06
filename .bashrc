@@ -5,10 +5,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# User specific environment
-PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-export PATH
-
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -27,5 +23,7 @@ PS1_PURPLE="\e[95m"
 PS1="\[$PS1_GREEN\]\u\[$PS1_WHITE\]@\[$PS1_RED\]\h \[$PS1_YELLOW\]\w\[$PS1_PURPLE\]\$(parse_git_branch)\[$PS1_WHITE\]\n$ " 
 #alias
 source ~/.my_alias
+#env
+source ~/.my_env
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
