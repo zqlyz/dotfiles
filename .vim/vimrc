@@ -2,6 +2,9 @@ let mapleader= ' '
 " 使用vim 模式
 set nocompatible
 
+" 不换行
+set nowrap
+
 " 设置中文帮助文档
 set helplang=cn
 
@@ -25,13 +28,11 @@ set shiftwidth=4
 " 用空格代替tab, 取消为noexpandtab
 set expandtab
 
-" 换行
-set wrap
-
-" 行列高亮
+" 行列高亮，80列常亮
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
 " highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
 set cursorline 
+set colorcolumn=80
 "set cursorcolumn
 
 "使用相对行号
@@ -40,21 +41,13 @@ set relativenumber
 
 " 高亮搜索
 set hlsearch
-exec 'nohlsearch'
 set incsearch
 set ignorecase
 set smartcase
 
-set splitright
-set splitbelow
+
 nmap sh :vsplit<CR>
 nmap sv :split<CR>
-
-nmap <LEADER>h <C-w>h
-nmap <LEADER>j <C-w>j
-nmap <LEADER>k <C-w>k
-nmap <LEADER>l <C-w>l
-
 
 nmap <LEADER><up> :res +5<CR>
 nmap <LEADER><down> :res -5<CR>
@@ -91,17 +84,12 @@ Plug 'PhilRunninger/nerdtree-buffer-ops'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-Plug 'majutsushi/tagbar'
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 filetype plugin indent on    " required
 
 "==============================
-" tagbar
-nmap <F3> :TagbarToggle<CR>
-
 
 " NERDTree 配置, 设置F3为开关按键
 let NERDTreeShowHidden=1

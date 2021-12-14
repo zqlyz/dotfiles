@@ -1,5 +1,5 @@
 # Toffy's Dotfiles
-Configuration for teminal environment
+Config for teminal environment
 
 There are some softwares will be installed.
 * zsh (replace bash)
@@ -42,4 +42,4 @@ Install coc.nvim extensions like:
 ```
 :CocInstall coc-cpp coc-json
 ```
-## Remember use the font "Source Code Pro nerd-font" for terminal.
+## Remember use the font "FiraCode nerd font" for terminal.
