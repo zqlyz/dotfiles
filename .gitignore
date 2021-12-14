@@ -2,3 +2,9 @@
 install.sh
 nodejs-install.sh
 neovim/
+<<<<<<< HEAD
+=======
+node_modules/
+package.json
+package-lock.json
+>>>>>>> 477af9c8b241b60f1149b70c1d730eaae4ead83b

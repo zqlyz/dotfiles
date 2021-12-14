@@ -15,8 +15,8 @@ There are some softwares will be installed.
 * git
 * fzf
 * oh-my-zsh
-* noto-sans-cjk (Chinese font)
-* nerd-font (Source Code Pro)
+* fonts-noto-cjk
+* nerd-font (fira code)
 
 ## Optional install
 * vim

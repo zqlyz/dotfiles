@@ -45,7 +45,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-
 nmap sh :vsplit<CR>
 nmap sv :split<CR>
 
@@ -90,6 +89,7 @@ call plug#end()
 filetype plugin indent on    " required
 
 "==============================
+
 
 " NERDTree 配置, 设置F3为开关按键
 let NERDTreeShowHidden=1

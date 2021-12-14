@@ -17,7 +17,8 @@ showhelp() {
 }
 
 delete_file() {
-    rm -rf nvim-linux64.tar.gz nvim-linux64 install.sh nodejs-install.sh
+    rm -rf neovim install.sh nodejs-install.sh node_modules package.json package-lock.json
+    exit 1
 }
 
 while getopts "nphd" arg
@@ -38,7 +39,7 @@ then
     # 安装最新的nodejs
     curl -sL install-node.vercel.app/lts > nodejs-install.sh
     chmod +x nodejs-install.sh
-    sudo ./nodejs-install.sh
+    sudo $pc4 ./nodejs-install.sh
 
     # 安装必要的软件
     sudo apt -y install zsh feh npm ranger exuberant-ctags \
@@ -57,13 +58,13 @@ then
     # oh-my-zsh
     $pc4 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     chmod +x install.sh
-    sh install.sh
+    $pc4 sh install.sh
     
     # zsh-autosuggestions
     $pc4 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
     #yarn
-    npm install -y yarn
+    npm install -g yarn
 fi
 #安装nerd-font
 sudo cp fonts/* /usr/share/fonts/
@@ -84,6 +85,9 @@ do
         "tools") ;;
         "fonts") ;;
         "neovim") ;;
+        "node_modules") ;;
+        "package.json") ;;
+        "package-lock.json") ;;
         *)
             STR_TEMP="$DIR/$FILE"
             if [ -d $STR_TEMP ]
