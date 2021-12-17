@@ -102,5 +102,3 @@ source $ZSH/oh-my-zsh.sh
 source ~/.my_alias
 # Env
 source ~/.my_env
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

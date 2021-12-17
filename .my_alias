@@ -13,13 +13,5 @@ alias zgrep='zgrep --color=auto'
 #使用pip3 代替pip
 alias pip='pip3'
 
-# 如果有nvim使用nvim
-if [ command -v 'nvim'>/dev/null 2>&1 ]
-then 
-   alias vi='vim'
-else
-   alias vi='nvim'
-   alias vim='nvim'
-fi
-
+alias ra='ranger'
 alias pc4='proxychains4'
