@@ -2,9 +2,9 @@ require('toggleterm').setup{
   -- size can be a number or function which is passed the current terminal
   size = function(term)
     if term.direction == 'horizontal' then
-      return 15
+      return 20
     elseif term.direction == 'vertical' then
-      return vim.o.columns * 0.4
+      return vim.o.columns * 0.5
     end
   end,
   open_mapping = [[<c-\>]],
@@ -15,8 +15,8 @@ require('toggleterm').setup{
   start_in_insert = true,
   insert_mappings = true, -- whether or not the open mapping applies in insert mode
   persist_size = true,
-  --  | 'horizontal' | 'window' | 'float'
-  direction = 'vertical',
+  -- 'vertical' | 'horizontal' | 'window' | 'float'
+  direction = 'float',
   close_on_exit = true, -- close the terminal window when the process exits
   shell = vim.o.shell, -- change the default shell
   -- This field is only relevant if direction is set to 'float'
@@ -26,8 +26,8 @@ require('toggleterm').setup{
     -- the 'curved' border is a custom border type
     -- not natively supported but implemented in this plugin.
     border = 'curved',
-    width = 1200,
-    height = 800,
+    width = 120,
+    height = 35,
     winblend = 3,
     highlights = {
       border = 'Normal',

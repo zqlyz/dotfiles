@@ -1,14 +1,14 @@
 -- 不换行
-vim.wo.wrap = false
+vim.o.wrap = false
 
 -- utf-8
 vim.o.encoding = 'utf-8'
 
 -- 设置缩进大小
-vim.bo.softtabstop = 2
-vim.bo.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
 -- 用空格代替tab, 取消为noexpandtab
-vim.bo.expandtab = true
+vim.o.expandtab = true
 
 -- 行列高亮，80列常亮
 vim.wo.cursorline = true
@@ -16,7 +16,7 @@ vim.wo.colorcolumn = '80'
 
 -- 使用相对行号
 vim.o.number = true
-vim.wo.relativenumber = true
+vim.o.relativenumber = true
 
 -- 高亮搜索
 vim.o.hlsearch = true

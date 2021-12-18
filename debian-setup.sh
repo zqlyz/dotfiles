@@ -24,7 +24,7 @@ delete_files() {
 down_files() {
   # 安装必要的软件
   sudo apt -y install zsh feh ranger exuberant-ctags \
-              git fzf w3m unzip curl doxygen\
+              git w3m unzip curl doxygen\
               fonts-noto-cjk proxychains4 pkg-config \
               ninja-build gettext libtool libtool-bin \
               autoconf automake cmake g++
@@ -37,13 +37,14 @@ down_files() {
   sudo make install
   cd $DIR
 
-  # oh-my-zsh
-  $PC4 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-  chmod +x install.sh
-  $PC4 sh install.sh
+  # zsh-plugins
+  $PC4 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
+  $PC4 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions
+  $PC4 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting
 
-  # zsh-autosuggestions
-  $PC4 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  # fzf
+  $PC4 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
 }
 
 copy_files() {

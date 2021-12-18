@@ -11,7 +11,6 @@ There are some softwares will be installed.
 * cmake
 * git
 * fzf
-* oh-my-zsh
 * fonts-noto-cjk
 * nerd-font (fira code)
 
