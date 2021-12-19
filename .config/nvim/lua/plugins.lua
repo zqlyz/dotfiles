@@ -40,8 +40,8 @@ return require('packer').startup(function(use)
       'hrsh7th/cmp-buffer', --从buffer中智能提示
       'hrsh7th/cmp-nvim-lua', --nvim-cmp source for neovim Lua API.
       'onsails/lspkind-nvim',
---      'hrsh7th/cmp-path',
---      'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
     }
   }
   use 'windwp/nvim-autopairs'

@@ -1,7 +1,6 @@
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 local lspkind = require'lspkind'
-
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -18,7 +17,9 @@ cmp.setup({
       menu = ({
         buffer = "[Buffer]",
         nvim_lsp = "[LSP]",
-        nvim_lua = "[Lua]"
+        nvim_lua = "[Lua]",
+        path = "[path]",
+        cmdline = "[cmd]"
       })
     }),
   },
@@ -44,6 +45,7 @@ cmp.setup({
     -- { name = 'snippy' }, -- For snippy users.
   }, {
       { name = 'buffer' },
+      { name = 'path' },
     })
 })
 
@@ -55,13 +57,13 @@ cmp.setup.cmdline('/', {
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
--- cmp.setup.cmdline(':', {
---   sources = cmp.config.sources({
---     { name = 'path' }
---   }, {
---       { name = 'cmdline' }
---     })
--- })
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+      { name = 'cmdline' }
+    })
+})
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())

@@ -5,3 +5,6 @@
   co = checkout
   br = branch
   cm = commit
+  lg = log --graph --pretty=format:'%C(bold red)%h%C(reset) %C(cyan)<%an>%C(reset) %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(yellow)%d%C(reset)' --all
+  lgr = log --graph --pretty=format:'%C(bold red)%h%C(reset) %C(bold magenta)%aD%C(reset) %C(green)(%ar)%C(reset) %C(yellow)%d%C(reset)%n          %C(white)%s%C(reset) %C(cyan)<%an>%C(reset)' -10 --all
+  lgf = log --name-status --graph --pretty=format:'%C(bold red)%h%C(reset) %C(cyan)<%an>%C(reset) %C(bold magenta)%aD%C(reset) %C(green)(%cr)%C(reset) %C(yellow)%d%C(reset)%n%n%C(white)%s%C(reset)%n' 
