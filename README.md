@@ -25,12 +25,12 @@ cd dotfiles
 ./debian-setup.sh
 ```
 Then use vim
-```
+```vim
 :PackerSync
 ```
 
 Install lsp server
-```
+```vim
 :LspInstall <language>
 ```
 ## Remember use the font "FiraCode nerd font" for terminal.

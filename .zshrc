@@ -5,17 +5,19 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# 保存命令
+HISTFILESIZE=1000
+HISTSIZE=1000
+HISTFILE=~/.zsh_history
+
+# Env
+source ~/.my_env
 
 source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# My alias
-source ~/.my_alias
-# Env
-source ~/.my_env
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# p10k theme on
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

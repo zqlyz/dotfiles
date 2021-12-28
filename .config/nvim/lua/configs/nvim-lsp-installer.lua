@@ -92,6 +92,7 @@ lsp_installer.on_server_ready(function(server)
         },
       }
     end,
+    ["pyright"] = function() end,
   }
 
   -- Use the server's custom settings, if they exist, otherwise default to the default options

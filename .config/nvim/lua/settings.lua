@@ -12,11 +12,12 @@ vim.o.expandtab = true
 
 -- 行列高亮，80列常亮
 vim.wo.cursorline = true
+vim.wo.cursorcolumn = true
 vim.wo.colorcolumn = '80'
 
--- 使用相对行号
+-- 不使用相对行号
 vim.o.number = true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 
 -- 高亮搜索
 vim.o.hlsearch = true

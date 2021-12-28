@@ -24,10 +24,10 @@ delete_files() {
 down_files() {
   # 安装必要的软件
   sudo apt -y install zsh feh ranger exuberant-ctags \
-              git w3m unzip curl doxygen\
-              fonts-noto-cjk proxychains4 pkg-config \
-              ninja-build gettext libtool libtool-bin \
-              autoconf automake cmake g++
+    git w3m unzip curl doxygen\
+    fonts-noto-cjk proxychains4 pkg-config \
+    ninja-build gettext libtool libtool-bin \
+    autoconf automake cmake g++
 
   # 安装最新的neovim
   $PC4 git clone https://github.com/neovim/neovim
@@ -50,6 +50,8 @@ down_files() {
 copy_files() {
   #安装nerd-font
   sudo cp fonts/* /usr/share/fonts/
+  fc-cache -fv
+  cd $DIR
 
   DOT_FILES=(
     ".bash_profile" 
@@ -58,7 +60,6 @@ copy_files() {
     ".my_env" 
     ".tmux.conf"
     ".zshrc"
-    ".oh-my-zsh/themes/my-theme.zsh-theme"
     ".gitconfig"
   )
   for FILE in ${DOT_FILES[@]}

@@ -46,7 +46,7 @@ return require('packer').startup(function(use)
   }
   use 'windwp/nvim-autopairs'
 
-  -- bufferline
+  -- bufferline, 显示已经打开的buffer在上面
   use {
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons'
@@ -67,6 +67,9 @@ return require('packer').startup(function(use)
 
   -- vim 内 shell
   use 'akinsho/toggleterm.nvim'
+
+  -- Blinkline
+  --use "lukas-reineke/indent-blankline.nvim"
 
   if packer_bootstrap then
     require('packer').sync()
