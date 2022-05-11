@@ -21,8 +21,6 @@ PS1_RED="\e[91m"
 PS1_YELLOW="\e[93m"
 PS1_PURPLE="\e[95m"
 PS1="\[$PS1_GREEN\]\u\[$PS1_WHITE\]@\[$PS1_RED\]\h \[$PS1_YELLOW\]\w\[$PS1_PURPLE\]\$(parse_git_branch)\[$PS1_WHITE\]\n$ " 
-#alias
-source ~/.my_alias
 #env
 source ~/.my_env
 

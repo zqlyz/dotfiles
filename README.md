@@ -4,7 +4,6 @@ Config for teminal environment
 There are some softwares will be installed.
 * zsh (replace bash)
 * feh (image viewer for terminal)
-* neovim
 * ranger (file manager for terminal)
 * w3m (brower for terminal)
 * ctags
@@ -14,9 +13,6 @@ There are some softwares will be installed.
 * fonts-noto-cjk
 * nerd-font (fira code)
 
-## Optional install
-* vim
-
 ## Usage
 ```bash
 cd ~
@@ -24,13 +20,13 @@ git clone https://github.com/zqlyz/dotfiles.git
 cd dotfiles
 ./debian-setup.sh
 ```
-Then use vim
-```vim
+Install neovim
+https://github.com/neovim/neovim/wiki/Building-Neovim
+
+Then use nvim
+```nvim
 :PackerSync
 ```
 
-Install lsp server
-```vim
-:LspInstall <language>
-```
-## Remember use the font "FiraCode nerd font" for terminal.
+### Remember use the font "FiraCode nerd font" for terminal.
+### Modify .my_env file for proxy setting.

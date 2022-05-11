@@ -1,14 +1,17 @@
 -- ondark
-require('onedark').setup()
-
+require('onedark').setup {
+    style = 'darker'
+}
+require('onedark').load()
 require'lualine'.setup{
   options = { theme  = 'onedark' },
 }
-require('configs/nvim-tree')
+require'nvim-tree'.setup {
+}
 require('configs/nvim-treesitter')
-require('configs/nvim-lsp-installer')
-require('configs/nvim-cmp')
+require('configs/nvim-lsp')
 
+require('telescope').setup {}
 -- autopairs
 require('nvim-autopairs').setup{}
 -- bufferline
@@ -21,7 +24,7 @@ require('configs/gitsigns')
 -- vim内终端
 require('configs/toggleterm')
 -- Blinkline
-vim.opt.list = true
+--vim.opt.list = true
 require("indent_blankline").setup {
   show_current_context = true,
   show_current_context_start = true,

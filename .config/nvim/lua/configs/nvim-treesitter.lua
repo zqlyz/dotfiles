@@ -1,12 +1,26 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- Only use parsers that are maintained
-  highlight = { -- enable highlighting
+  -- A list of parser names, or "all"
+  ensure_installed = { "c", "lua", "vim", "javascript", "html", "css", "python"},
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+  incremental_selection = {
     enable = true,
+    keymaps = {
+      init_selection = '<CR>',
+      node_incremental = '<CR>',
+      node_decremental = '<BS>',
+      scope_incremental = '<TAB>',
+    }
+  },
+  highlight = {
+    enable = true,
+
+   additional_vim_regex_highlighting = false,
   },
   indent = {
-    enable = true, -- default is disabled anyways
+    enable = true
   }
 }
-
---vim.opt.foldmethod = "expr"
---vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+--vim.wo.foldmethod = 'expr'
+--vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
