@@ -30,7 +30,10 @@ return require('packer').startup(function(use)
     run = ':TSUpdate'
   }
   -- lsp
-  use 'neovim/nvim-lspconfig'
+  use {
+    "williamboman/nvim-lsp-installer",
+    'neovim/nvim-lspconfig',
+  }
 
   -- auto complete
   use {
