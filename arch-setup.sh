@@ -46,6 +46,8 @@ copy_files() {
   done
 
   ln -sf $DIR/.config/* ~/.config/
+  mkdir ~/.local/bin/vim
+  ln -sf $(which nvim) ~/.local/bin/vim
   zsh
   chsh -s /bin/zsh
 }
@@ -60,7 +62,6 @@ while getopts "ysphd" arg
 do
   case $arg in
     y) copy_files;;
-    d) delete_files;;
     s) down_files
        copy_files;;
     h) show_help;;

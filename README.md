@@ -6,25 +6,23 @@ There are some softwares will be installed.
 * feh (image viewer for terminal)
 * ranger (file manager for terminal)
 * w3m (brower for terminal)
-* ctags
 * cmake
-* git
 * fzf
-* fonts-noto-cjk
 * nerd-font (fira code)
-
+* lua
+* gcc
+* unzip
+* npm
 ## Usage
 ```bash
 cd ~
 git clone https://github.com/zqlyz/dotfiles.git
 cd dotfiles
-./debian-setup.sh
+./arch-setup.sh
 ```
-Install neovim
-https://github.com/neovim/neovim/wiki/Building-Neovim
 
 Then use nvim
-```nvim
+```vim
 :PackerSync
 ```
 
