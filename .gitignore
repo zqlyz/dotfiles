@@ -2,4 +2,4 @@
 install.sh
 neovim/
 .config/nvim/plugin/
-.config/ranger/plugins/__pycache__/
+.config/ranger/
