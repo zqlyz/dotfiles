@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
   }
   -- lsp
   use {
-    "williamboman/nvim-lsp-installer",
+    'williamboman/nvim-lsp-installer',
     'neovim/nvim-lspconfig',
   }
 
@@ -69,12 +69,15 @@ return require('packer').startup(function(use)
   use 'simrat39/symbols-outline.nvim'
 
   -- vim 内 shell
-  use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
+  use {'akinsho/toggleterm.nvim', tag = 'v1.*', config = function()
     require("toggleterm").setup()
   end}
 
   -- Blinkline
-  use "lukas-reineke/indent-blankline.nvim"
+  use 'lukas-reineke/indent-blankline.nvim'
+
+  -- emmet (html plug)
+  use 'mattn/emmet-vim'
 
   if packer_bootstrap then
     require('packer').sync()

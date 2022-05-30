@@ -18,14 +18,13 @@ cmp.setup({
   },
   formatting = {
     format = lspkind.cmp_format({
-      with_text = true,
-      menu = ({
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[Lua]",
-        path = "[path]",
-        cmdline = "[cmd]"
-      })
+      -- with_text = true,
+      -- menu = ({
+      --   buffer = "[buffer]",
+      --   nvim_lsp = "[lsp]",
+      --   path = "[path]",
+      --   cmdline = "[cmd]"
+      -- })
     }),
   },
   mapping = {
@@ -127,7 +126,7 @@ local function on_attach(client, bufnr)
 end
 
 -- Setup nvim-lsp-installer
-local servers = { "sumneko_lua", "pyright" }
+local servers = { "sumneko_lua", "pyright", "html", "cssls", "tsserver",  }
 require("nvim-lsp-installer").setup {
   ensure_installed = servers
 }

@@ -28,9 +28,6 @@ nmap('<leader><down>',  '<cmd>res -5<cr>')
 nmap('<leader><left>',  '<cmd>vertical resize -5<cr>')
 nmap('<leader><right>', '<cmd>vertical resize +5<cr>')
 
--- search
-nsmap('<leader>/', '<cmd>nohlsearch<CR>')
-
 --treesitter
 nsmap('ff', '<cmd>Telescope find_files<cr>')
 nsmap('fg', '<cmd>Telescope live_grep<cr>')

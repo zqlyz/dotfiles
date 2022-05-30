@@ -7,7 +7,8 @@ vim.o.encoding = 'utf-8'
 -- 设置缩进大小
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
--- 用空格代替tab, 取消为noexpandtab
+
+-- <C-v><tab>可以使用原始tab
 vim.o.expandtab = true
 
 -- 行列高亮，80列常亮
