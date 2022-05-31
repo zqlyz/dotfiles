@@ -14,7 +14,8 @@ show_help() {
 
 down_files() {
   # 安装必要的软件 
-  sudo pacman -Syu zsh ranger fzf neovim cmake feh lua gcc unzip npm highlight
+  sudo pacman -Syu zsh ranger fzf neovim cmake feh lua gcc unzip npm highlight \
+                   xclip
 
   # zsh-plugins
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
