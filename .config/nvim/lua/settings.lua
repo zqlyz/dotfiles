@@ -16,9 +16,9 @@ vim.wo.cursorline = true
 vim.wo.cursorcolumn = true
 vim.wo.colorcolumn = '80'
 
--- 不使用相对行号
+-- 使用相对行号
 vim.o.number = true
-vim.o.relativenumber = false
+vim.o.relativenumber = true
 
 -- 高亮搜索
 vim.o.hlsearch = true

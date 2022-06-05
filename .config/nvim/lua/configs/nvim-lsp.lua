@@ -3,6 +3,7 @@
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local cmp = require'cmp'
 local lspkind = require'lspkind'
@@ -11,20 +12,20 @@ cmp.setup({
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
       -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
     end
   },
   formatting = {
     format = lspkind.cmp_format({
-      -- with_text = true,
-      -- menu = ({
-      --   buffer = "[buffer]",
-      --   nvim_lsp = "[lsp]",
-      --   path = "[path]",
-      --   cmdline = "[cmd]"
-      -- })
+    --  with_text = true,
+    --  menu = ({
+    --    buffer = "[buffer]",
+    --    nvim_lsp = "[lsp]",
+    --    path = "[path]",
+    --    cmdline = "[cmd]"
+    --  })
     }),
   },
   mapping = {
@@ -44,7 +45,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     -- { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
+    { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
   }, {
@@ -126,20 +127,51 @@ local function on_attach(client, bufnr)
 end
 
 -- Setup nvim-lsp-installer
-local servers = { "sumneko_lua", "pyright", "html", "cssls", "tsserver",  }
+local servers = { "sumneko_lua", "pyright", "cssls", "tsserver", "html"}
 require("nvim-lsp-installer").setup {
   ensure_installed = servers
 }
 
 for _, server in ipairs(servers) do
-  require('lspconfig')[server].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    flags = {
-      -- This will be the default in neovim 0.7+
-      debounce_text_changes = 150,
+  if server == 'sumneko_lua' then
+    require('lspconfig')[server].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      flags = {
+        -- This will be the default in neovim 0.7+
+        debounce_text_changes = 150,
+      },
+      settings = {
+        Lua = {
+          runtime = {
+            -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+            version = 'LuaJIT',
+          },
+          diagnostics = {
+            -- Get the language server to recognize the `vim` global
+            globals = {'vim'},
+          },
+          workspace = {
+            -- Make the server aware of Neovim runtime files
+            library = vim.api.nvim_get_runtime_file("", true),
+          },
+          -- Do not send telemetry data containing a randomized but unique identifier
+          telemetry = {
+            enable = false,
+          }
+        }
+      }
     }
-  }
+  else
+    require('lspconfig')[server].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      flags = {
+        -- This will be the default in neovim 0.7+
+        debounce_text_changes = 150,
+      }
+    }
+  end
 end
 
 

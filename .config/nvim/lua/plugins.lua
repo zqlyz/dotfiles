@@ -42,7 +42,8 @@ return require('packer').startup(function(use)
       'hrsh7th/cmp-nvim-lsp', --neovim 内置 LSP 客户端的 nvim-cmp 源
       'hrsh7th/cmp-buffer', --从buffer中智能提示
       'hrsh7th/cmp-nvim-lua', --nvim-cmp source for neovim Lua API.
-      'onsails/lspkind-nvim',
+      'L3MON4D3/LuaSnip', --Snippets plugin
+      'onsails/lspkind-nvim', -- 图标
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
     }
@@ -78,6 +79,9 @@ return require('packer').startup(function(use)
 
   -- emmet (html plug)
   use 'mattn/emmet-vim'
+  
+  -- 注释
+  use 'tpope/vim-commentary'
 
   if packer_bootstrap then
     require('packer').sync()
