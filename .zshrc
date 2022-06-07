@@ -6,9 +6,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # 保存命令
-HISTFILESIZE=1000
 HISTSIZE=1000
-HISTFILE=~/.zsh_history
+HISTFILE="$HOME/.zsh_history"
+SAVEHIST=$HISTSIZE
 
 # Env
 source ~/.my_env
