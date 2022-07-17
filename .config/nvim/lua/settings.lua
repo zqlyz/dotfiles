@@ -1,6 +1,9 @@
 -- 不换行
 vim.o.wrap = false
 
+-- 开启鼠标
+-- vim.opt.mouse = 'a'
+
 -- utf-8
 vim.o.encoding = 'utf-8'
 
