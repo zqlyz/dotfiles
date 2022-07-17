@@ -5,7 +5,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
 show_help() {
-  echo "Usage: '$0': [-ynpdh]"
+  echo "Usage: '$0': [-syh]"
   echo "   -s download softwares and copy configs"
   echo "   -y just copy configs"
   echo "   -h show this help"
@@ -28,11 +28,7 @@ down_files() {
 }
 
 copy_files() {
-  #安装nerd-font
-  sudo cp fonts/* /usr/share/fonts/
-  fc-cache -fv
   cd $DIR
-
   DOT_FILES=(
     ".bash_profile" 
     ".bashrc" 
@@ -47,7 +43,7 @@ copy_files() {
   done
 
   ln -sf $DIR/.config/* ~/.config/
-  mkdir ~/.local/bin/vim
+  mkdir ~/.local/bin/
   ln -sf $(which nvim) ~/.local/bin/vim
   zsh
   chsh -s /bin/zsh

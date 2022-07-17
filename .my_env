@@ -8,7 +8,7 @@ export EDITOR=nvim
 export LD_LIBRARY_PATH="/usr/local/lib:/usr/lib:/lib:$LD_LIBRARY_PATH";
 
 # proxy
-alias setproxy="export ALL_PROXY=socks5://192.168.206.140:1080"
+alias setproxy="export ALL_PROXY=socks5://192.168.206.248:1080"
 alias unsetproxy="unset ALL_PROXY"
 
 # alias
