@@ -43,7 +43,7 @@ copy_files() {
   done
 
   ln -sf $DIR/.config/* ~/.config/
-  mkdir ~/.local/bin/
+  mkdir -p ~/.local/bin/
   ln -sf $(which nvim) ~/.local/bin/vim
   zsh
   chsh -s /bin/zsh
