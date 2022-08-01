@@ -127,7 +127,7 @@ local function on_attach(client, bufnr)
 end
 
 -- Setup nvim-lsp-installer
-local servers = { "sumneko_lua", "pyright", "cssls", "tsserver", "html"}
+local servers = { "sumneko_lua", "pyright", "cssls", "tsserver", "html", "ccls"}
 require("nvim-lsp-installer").setup {
   ensure_installed = servers
 }
@@ -168,7 +168,7 @@ for _, server in ipairs(servers) do
       capabilities = capabilities,
       flags = {
         -- This will be the default in neovim 0.7+
-        debounce_text_changes = 150,
+        -- debounce_text_changes = 150,
       }
     }
   end
