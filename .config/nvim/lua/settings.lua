@@ -15,8 +15,8 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
 -- 行列高亮，80列常亮
-vim.wo.cursorline = true
-vim.wo.cursorcolumn = true
+-- vim.wo.cursorline = true
+-- vim.wo.cursorcolumn = true
 vim.wo.colorcolumn = '80'
 
 -- 使用相对行号
@@ -28,3 +28,8 @@ vim.o.hlsearch = true
 vim.o.incsearch = true
 vim.o.smartcase = true
 vim.o.ignorecase = true
+
+vim.cmd([[
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+]])

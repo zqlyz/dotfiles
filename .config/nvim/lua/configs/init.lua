@@ -1,6 +1,6 @@
 -- ondark
 require('onedark').setup {
-  style = 'warmer'
+  style = 'dark'
 }
 require('onedark').load()
 require'lualine'.setup {
