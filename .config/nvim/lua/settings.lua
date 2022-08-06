@@ -28,8 +28,3 @@ vim.o.hlsearch = true
 vim.o.incsearch = true
 vim.o.smartcase = true
 vim.o.ignorecase = true
-
-vim.cmd([[
-autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
-autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
-]])
