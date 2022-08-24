@@ -28,8 +28,8 @@ nsmap('fg', '<cmd>Telescope live_grep<cr>')
 --nsmap('fb', '<cmd>Telescope buffers<cr>')
 --nsmap('fh', '<cmd>Telescope help_tags<cr>')
 
-nsmap('tl', '<cmd>HopLine<cr>')
-nsmap('tw', '<cmd>HopWord<cr>')
+nsmap('fl', '<cmd>HopLine<cr>')
+nsmap('fw', '<cmd>HopWord<cr>')
 
 
 nsmap('<F2>', '<cmd>NvimTreeToggle<cr>') -- tree

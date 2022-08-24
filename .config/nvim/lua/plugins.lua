@@ -76,7 +76,11 @@ return require('packer').startup(function(use)
     require("toggleterm").setup()
   end}
 
-  use 'mfussenegger/nvim-dap' -- 调试
+  -- debugger
+  use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
+
   use 'terrortylor/nvim-comment'
 
   if packer_bootstrap then

@@ -8,6 +8,7 @@ show_help() {
   echo "Usage: '$0': [-syh]"
   echo "   -s download softwares and copy configs"
   echo "   -y just copy configs"
+  echo "   -d just download"
   echo "   -h show this help"
   exit 1
 }
@@ -27,6 +28,14 @@ down_files() {
   # fzf
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install
+
+  # c/cpp/dust debugger
+  mkdir -p ~/.local/share/nvim/cpptools/
+  cd ~/.local/share/nvim/cpptools/
+  wget https://github.com/microsoft/vscode-cpptools/releases/download/v1.11.5/cpptools-linux.vsix
+  unzip cpptools-linux.vsix
+  chmod +x ~/.local/share/nvim/cpptools/extension/debugAdapters/bin/OpenDebugAD7
+  cd $DIR
 }
 
 copy_files() {
@@ -61,6 +70,7 @@ while getopts "ysphd" arg
 do
   case $arg in
     y) copy_files;;
+    d) down_files;;
     s) down_files
        copy_files;;
     h) show_help;;

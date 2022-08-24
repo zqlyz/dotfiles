@@ -69,4 +69,8 @@ require('nvim-autopairs').setup{} -- autopairs
 require('configs/toggleterm') -- vim内终端
 require('nvim_comment').setup {} -- 注释
 
+-- debugger
+require('configs/nvim-dap')
+require("nvim-dap-virtual-text").setup {}
+require("dapui").setup {}
 
