@@ -5,30 +5,44 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  -- 主题
-  use 'navarasu/onedark.nvim'
-  -- 目录树
+
+  -- 基础插件
+  use 'nvim-lua/plenary.nvim' --为下面的插件提供api
+  use 'rcarriga/nvim-notify' --右上角通知
+  use 'kyazdani42/nvim-web-devicons' -- 各种图标
+
+  -- ui
+  use 'navarasu/onedark.nvim' -- 主题
+  use 'norcalli/nvim-colorizer.lua'
+  use 'lewis6991/gitsigns.nvim' --git
+  use 'ray-x/lsp_signature.nvim' -- 函数提示
+  use 'lukas-reineke/indent-blankline.nvim' -- Blinkline
+  use 'nvim-lualine/lualine.nvim' -- 下面的line
+  use 'folke/which-key.nvim' -- 快捷键
+  use 'folke/todo-comments.nvim'
+  use 'folke/trouble.nvim' -- TODO
+  use 'ldelossa/litee.nvim'
+  use 'ldelossa/litee-symboltree.nvim'
+  use 'ldelossa/litee-calltree.nvim'
+
+  -- finding
+  use 'kyazdani42/nvim-tree.lua' -- 目录树
+  use 'nvim-telescope/telescope.nvim' -- 快速文件查找
+  use 'ethanholz/nvim-lastplace' --上一次位置
   use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    }
+    'phaazon/hop.nvim', -- esay motion
+    branch = 'v2'
   }
-  -- 下面的line
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-  -- 快速文件查找
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
-  }
+  use 'andymass/vim-matchup'
+
   -- 语法高亮
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'nvim-treesitter/nvim-treesitter-context'
+
   -- lsp
   use {
     'williamboman/nvim-lsp-installer',
@@ -43,45 +57,27 @@ return require('packer').startup(function(use)
       'hrsh7th/cmp-buffer', --从buffer中智能提示
       'hrsh7th/cmp-nvim-lua', --nvim-cmp source for neovim Lua API.
       'L3MON4D3/LuaSnip', --Snippets plugin
+      'rafamadriz/friendly-snippets',
       'onsails/lspkind-nvim', -- 图标
+      'saadparwaiz1/cmp_luasnip', -- TODO asdfsfd
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
     }
   }
+
   use 'windwp/nvim-autopairs'
 
-  -- bufferline, 显示已经打开的buffer在上面
-  use {
-    'akinsho/bufferline.nvim',
-    requires = 'kyazdani42/nvim-web-devicons'
-  }
+  use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
 
-  --git
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    }
-  }
-  -- 函数提示
-  use 'ray-x/lsp_signature.nvim'
-
-  --符号表，tags
-  use 'simrat39/symbols-outline.nvim'
 
   -- vim 内 shell
   use {'akinsho/toggleterm.nvim', tag = 'v1.*', config = function()
     require("toggleterm").setup()
   end}
 
-  -- Blinkline
-  use 'lukas-reineke/indent-blankline.nvim'
-
-  -- emmet (html plug)
-  use 'mattn/emmet-vim'
-  
-  -- 注释
-  use 'tpope/vim-commentary'
+  use 'mfussenegger/nvim-dap' -- 调试
+  use 'terrortylor/nvim-comment'
 
   if packer_bootstrap then
     require('packer').sync()

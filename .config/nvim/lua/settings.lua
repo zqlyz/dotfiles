@@ -1,6 +1,7 @@
--- 不换行
 vim.o.wrap = false
 
+-- 不换行
+vim.o.termguicolors = true
 -- 开启鼠标
 -- vim.opt.mouse = 'a'
 

@@ -1,14 +1,14 @@
 # User specific environment
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 
-#use vim
+#use neovim
 export EDITOR=nvim
 
 # c/c++ 相关
 export LD_LIBRARY_PATH="/usr/local/lib:/usr/lib:/lib:$LD_LIBRARY_PATH";
 
 # proxy
-alias setproxy="export ALL_PROXY=socks5://192.168.206.248:1080"
+alias setproxy="export ALL_PROXY=socks5://xxx.xxx.xxx.xxx:x"
 alias unsetproxy="unset ALL_PROXY"
 
 # alias
@@ -26,8 +26,6 @@ alias zegrep='zegrep --color=auto'
 alias zfgrep='zfgrep --color=auto'
 alias zgrep='zgrep --color=auto'
 
-#使用pip3 代替pip
-alias pip='pip3'
 alias ra='ranger'
 
 # bash fn
