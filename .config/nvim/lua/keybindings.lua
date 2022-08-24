@@ -28,10 +28,25 @@ nsmap('fg', '<cmd>Telescope live_grep<cr>')
 --nsmap('fb', '<cmd>Telescope buffers<cr>')
 --nsmap('fh', '<cmd>Telescope help_tags<cr>')
 
+-- motion
 nsmap('fl', '<cmd>HopLine<cr>')
 nsmap('fw', '<cmd>HopWord<cr>')
 
+-- lsp keybindings in configs/nvim-lsp.lua, not here.
+-- toggletrem keybindings in configs/toggletrem.lua, not here.
+-- gitsigns keybindings in configs/gitsigns.ula, not here
+
 
 nsmap('<F2>', '<cmd>NvimTreeToggle<cr>') -- tree
-nsmap('<F3>', '<cmd>TroubleToggle<cr>') -- symbols_outline
-nsmap('<F4>', '<cmd>lua vim.lsp.buf.document_symbol()<cr>') -- symbols_outline
+nsmap('<F3>', '<cmd>SymbolsOutline<cr>') -- symbols_outline
+nsmap('<F4>', '<cmd>TroubleToggle<cr>')
+nsmap('<F5>', '<cmd>lua require"dap".continue()<cr>')
+nsmap('<F6>', '<cmd>lua require"dap".disconnect({ restart = false, terminateDebuggee = null }, require"dapui".close())<cr>')
+
+nsmap('<F10>', '<cmd>lua require"dap".step_over()<cr>')
+nsmap('<F11>', '<cmd>lua require"dap".step_into()<cr>')
+nsmap('<F12>', '<cmd>lua require"dap".step_out()<cr>')
+
+
+nsmap('<leader>b', '<cmd>lua require"dap".toggle_breakpoint()<cr>')
+nsmap('<leader>B', '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>')

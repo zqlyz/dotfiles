@@ -35,22 +35,7 @@ require'lualine'.setup {
 require('which-key').setup{}
 require('todo-comments').setup {}
 require("trouble").setup {}
-require('litee.lib').setup {
-  panel = {
-    tree = {
-      icon_set = "condicons"
-    },
-    orientation = "right",
-    panel_size = 40
-  }
-}
-require('litee.calltree').setup {
-  on_open = "panel"
-}
-require('litee.symboltree').setup {
-  on_open = "panel"
-}
-
+require('symbols-outline').setup {}
 
 -- finding
 require('nvim-tree').setup {}
@@ -73,4 +58,6 @@ require('nvim_comment').setup {} -- 注释
 require('configs/nvim-dap')
 require("nvim-dap-virtual-text").setup {}
 require("dapui").setup {}
+require('telescope').setup {}
+require('telescope').load_extension('dap')
 

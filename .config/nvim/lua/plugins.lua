@@ -1,7 +1,8 @@
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+    install_path })
 end
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
@@ -21,9 +22,7 @@ return require('packer').startup(function(use)
   use 'folke/which-key.nvim' -- 快捷键
   use 'folke/todo-comments.nvim'
   use 'folke/trouble.nvim' -- TODO
-  use 'ldelossa/litee.nvim'
-  use 'ldelossa/litee-symboltree.nvim'
-  use 'ldelossa/litee-calltree.nvim'
+  use 'simrat39/symbols-outline.nvim' --symbol
 
   -- finding
   use 'kyazdani42/nvim-tree.lua' -- 目录树
@@ -72,14 +71,15 @@ return require('packer').startup(function(use)
 
 
   -- vim 内 shell
-  use {'akinsho/toggleterm.nvim', tag = 'v1.*', config = function()
+  use { 'akinsho/toggleterm.nvim', tag = 'v1.*', config = function()
     require("toggleterm").setup()
-  end}
+  end }
 
   -- debugger
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
   use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
 
   use 'terrortylor/nvim-comment'
 

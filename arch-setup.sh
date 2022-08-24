@@ -18,7 +18,7 @@ down_files() {
   sudo pacman -Syu --noconfirm \
               zsh ranger fzf neovim cmake feh lua wget curl llvm \
               xclip man-db unzip npm highlight tmux clang ninja make \
-              openssh openssl ctags net-tools htop gdb ripgrep
+              openssh openssl ctags net-tools htop gdb ripgrep gzip
 
   # zsh-plugins
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
