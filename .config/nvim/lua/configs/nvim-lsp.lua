@@ -129,7 +129,7 @@ local function on_attach(client, bufnr)
 end
 
 -- Setup nvim-lsp-installer
-local servers = { "sumneko_lua", "pyright", "ccls", "tsserver", "html", "cssls"}
+local servers = { "sumneko_lua", "pyright", "clangd", "tsserver", "html", "cssls"}
 require("nvim-lsp-installer").setup {
   ensure_installed = servers
 }

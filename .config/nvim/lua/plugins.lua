@@ -20,8 +20,8 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim' -- Blinkline
   use 'nvim-lualine/lualine.nvim' -- 下面的line
   use 'folke/which-key.nvim' -- 快捷键
-  use 'folke/todo-comments.nvim'
-  use 'folke/trouble.nvim' -- TODO
+  use 'folke/todo-comments.nvim' -- TODO : todo highlight
+  use 'folke/trouble.nvim' -- 下面栏
   use 'simrat39/symbols-outline.nvim' --symbol
 
   -- finding
@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
       'L3MON4D3/LuaSnip', --Snippets plugin
       'rafamadriz/friendly-snippets',
       'onsails/lspkind-nvim', -- 图标
-      'saadparwaiz1/cmp_luasnip', -- TODO asdfsfd
+      'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
     }

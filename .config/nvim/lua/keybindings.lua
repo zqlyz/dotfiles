@@ -1,6 +1,7 @@
 -- 个人键位配置 --
 vim.g.mapleader = ' '
 local nore = { noremap = true }
+local re = { noremap = false }
 local slient = { noremap = true, silent = true }
 local function nmap(key, map)
   vim.api.nvim_set_keymap('n', key, map, nore)
@@ -10,6 +11,12 @@ local function imap(key, map)
 end
 local function nsmap(key, map)
   vim.api.nvim_set_keymap('n', key, map, slient)
+end
+local function renmap(key, map)
+  vim.api.nvim_set_keymap('n', key, map, re)
+end
+local function revmap(key, map)
+  vim.api.nvim_set_keymap('v', key, map, re)
 end
 
 -- c-s to save file
