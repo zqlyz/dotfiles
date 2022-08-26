@@ -29,13 +29,15 @@ require("indent_blankline").setup {
     "IndentBlanklineIndent6"
   },
 }
-require'lualine'.setup {
-  options = { theme  = 'onedark' },
+require 'lualine'.setup {
+  options = { theme = 'onedark' },
 }
-require('which-key').setup{}
+require('which-key').setup {}
 require('todo-comments').setup {}
 require("trouble").setup {}
 require('symbols-outline').setup {}
+require('bufferline').setup {}
+
 
 -- finding
 require('nvim-tree').setup {}
@@ -49,7 +51,7 @@ require('configs/nvim-treesitter')
 
 -- 补全
 require('configs/nvim-lsp')
-require('nvim-autopairs').setup{} -- autopairs
+require('nvim-autopairs').setup {} -- autopairs
 
 require('configs/toggleterm') -- vim内终端
 require('nvim_comment').setup {} -- 注释
@@ -60,4 +62,3 @@ require("nvim-dap-virtual-text").setup {}
 require("dapui").setup {}
 require('telescope').setup {}
 require('telescope').load_extension('dap')
-

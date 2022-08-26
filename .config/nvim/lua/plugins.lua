@@ -23,6 +23,10 @@ return require('packer').startup(function(use)
   use 'folke/todo-comments.nvim' -- TODO : todo highlight
   use 'folke/trouble.nvim' -- 下面栏
   use 'simrat39/symbols-outline.nvim' --symbol
+  use {
+    'akinsho/bufferline.nvim',
+    tag = 'v2.*'
+  }
 
   -- finding
   use 'kyazdani42/nvim-tree.lua' -- 目录树

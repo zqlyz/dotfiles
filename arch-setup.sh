@@ -16,9 +16,9 @@ show_help() {
 down_files() {
   # 安装必要的软件 
   sudo pacman -Syu --noconfirm \
-              zsh ranger fzf neovim cmake feh lua wget curl llvm \
+              zsh ranger fzf neovim cmake feh lua wget curl llvm python \
               xclip man-db unzip npm highlight tmux clang ninja make \
-              openssh openssl ctags net-tools htop gdb ripgrep gzip
+              openssh openssl ctags net-tools htop gdb ripgrep gzip python-pip
 
   # zsh-plugins
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
