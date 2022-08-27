@@ -27,6 +27,11 @@ end
 nmap('<c-s>', '<cmd>w<CR>')
 imap('<c-s>', '<Esc><cmd>w<CR>a')
 
+-- m-j 是 alt + j
+nmap('<m-up>', '<cmd>res +1<cr>')
+nmap('<m-down>', '<cmd>res -1<cr>')
+nmap('<m-left>', '<cmd>vertical resize -1<cr>')
+nmap('<m-right>', '<cmd>vertical resize +1<cr>')
 
 --treesitter
 nsmap('ff', '<cmd>Telescope find_files<cr>')
@@ -58,10 +63,6 @@ nsmap('<F12>', '<cmd>lua require"dap".step_out()<cr>')
 
 -- leader key
 -- vim window size
-nmap('<leader><up>', '<cmd>res +5<cr>')
-nmap('<leader><down>', '<cmd>res -5<cr>')
-nmap('<leader><left>', '<cmd>vertical resize -5<cr>')
-nmap('<leader><right>', '<cmd>vertical resize +5<cr>')
 nmap('<leader>h', '<c-w>h')
 nmap('<leader>j', '<c-w>j')
 nmap('<leader>k', '<c-w>k')
@@ -78,10 +79,6 @@ nsmap('<leader>B', '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoin
 local wk = require('which-key')
 
 wk.register({
-  ['<Up>'] = "which_key_ignore",
-  ['<Down>'] = "which_key_ignore",
-  ['<Left>'] = "which_key_ignore",
-  ['<Right>'] = "which_key_ignore",
   ["j"] = "which_key_ignore",
   ["h"] = "which_key_ignore",
   ["k"] = "which_key_ignore",
