@@ -32,7 +32,7 @@ down_files() {
   # c/cpp/dust debugger
   mkdir -p ~/.local/share/nvim/cpptools/
   cd ~/.local/share/nvim/cpptools/
-  wget https://github.com/microsoft/vscode-cpptools/releases/download/v1.11.5/cpptools-linux.vsix
+  wget https://github.com/microsoft/vscode-cpptools/releases/download/v1.12.4/cpptools-linux.vsix
   unzip cpptools-linux.vsix
   chmod +x ~/.local/share/nvim/cpptools/extension/debugAdapters/bin/OpenDebugAD7
   cd $DIR

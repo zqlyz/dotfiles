@@ -3,7 +3,7 @@ vim.o.wrap = false
 -- 不换行
 vim.o.termguicolors = true
 -- 开启鼠标
--- vim.opt.mouse = 'a'
+vim.cmd [[set mouse=]]
 
 -- utf-8
 vim.o.encoding = 'utf-8'

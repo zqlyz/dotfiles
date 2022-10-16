@@ -59,12 +59,12 @@ return require('packer').startup(function(use)
       'hrsh7th/cmp-nvim-lsp', --neovim 内置 LSP 客户端的 nvim-cmp 源
       'hrsh7th/cmp-buffer', --从buffer中智能提示
       'hrsh7th/cmp-nvim-lua', --nvim-cmp source for neovim Lua API.
-      'L3MON4D3/LuaSnip', --Snippets plugin
       'rafamadriz/friendly-snippets',
       'onsails/lspkind-nvim', -- 图标
-      'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip'
     }
   }
 
