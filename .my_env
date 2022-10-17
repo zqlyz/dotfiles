@@ -1,3 +1,6 @@
+#!/bin/sh
+hostip=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
+port=1080
 # User specific environment
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 
@@ -6,10 +9,6 @@ export EDITOR=nvim
 
 # c/c++ 相关
 export LD_LIBRARY_PATH="/usr/local/lib:/usr/lib:/lib:$LD_LIBRARY_PATH";
-
-# proxy
-alias setproxy="export ALL_PROXY=socks5://xxx.xxx.xxx.xxx:x"
-alias unsetproxy="unset ALL_PROXY"
 
 # alias
 alias egrep='egrep --color=auto'
@@ -30,3 +29,23 @@ alias ra='ranger'
 
 # bash fn
 randpwd(){ < /dev/urandom tr -dc '_A-Z-a-z-0-9~#%^&*(){}[]:' | head -c 16;echo;}
+
+#proxy fn
+setproxy() {
+  export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+  export NO_PROXY="localhost,127.0.0.1,localaddress,.localdomain.com"
+  export ALL_PROXY=socks5://${hostip}:${port}
+  export all_proxy=${ALL_PROXY}
+  export http_proxy=${ALL_PROXY}
+  export HTTP_PROXY=${ALL_PROXY}
+  export https_proxy=${ALL_PROXY}
+  export HTTPS_PROXY=${ALL_PROXY}
+}
+unsetproxy() {
+  unset ALL_PROXY
+  unset all_proxy
+  unset http_proxy
+  unset HTTP_PROXY
+  unset https_proxy
+  unset HTTPS_PROXY
+}
