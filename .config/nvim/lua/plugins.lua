@@ -63,8 +63,9 @@ return require('packer').startup(function(use)
       'onsails/lspkind-nvim', -- 图标
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
+      -- vsnip
       'hrsh7th/cmp-vsnip',
-      'hrsh7th/vim-vsnip'
+      'hrsh7th/vim-vsnip',
     }
   }
 
@@ -75,9 +76,7 @@ return require('packer').startup(function(use)
 
 
   -- vim 内 shell
-  use { 'akinsho/toggleterm.nvim', tag = 'v1.*', config = function()
-    require("toggleterm").setup()
-  end }
+  use { 'akinsho/toggleterm.nvim', tag = '*'}
 
   -- debugger
   use 'mfussenegger/nvim-dap'

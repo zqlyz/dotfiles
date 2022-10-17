@@ -36,6 +36,9 @@ down_files() {
   unzip cpptools-linux.vsix
   chmod +x ~/.local/share/nvim/cpptools/extension/debugAdapters/bin/OpenDebugAD7
   cd $DIR
+  # python debugger debugpy
+  python -m venv ~/.local/share/nvim/virtualenvs/debugpy
+  ~/.local/share/nvim/virtualenvs/debugpy/bin/python -m pip install debugpy
 }
 
 copy_files() {
