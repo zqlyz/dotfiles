@@ -17,7 +17,7 @@ down_files() {
   # 安装必要的软件 
   sudo pacman -Syu --noconfirm \
               zsh ranger fzf neovim cmake feh lua wget curl llvm python ca-certificates \
-              xclip man-db unzip npm highlight tmux clang ninja make \
+              xclip man-db unzip npm highlight tmux clang ninja make wqy-zenhei\
               openssh openssl ctags net-tools htop gdb ripgrep gzip python-pip
 
   # zsh-plugins

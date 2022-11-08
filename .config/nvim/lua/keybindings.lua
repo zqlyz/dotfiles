@@ -90,3 +90,6 @@ wk.register({
   ["b"] = "Toggle Breakpoint",
   ["B"] = "Toggle Condition Breakpoint",
 }, { mode = 'n', prefix = '<leader>' })
+
+vim.cmd [[imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>']]
+vim.cmd [[smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>']]

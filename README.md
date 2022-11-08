@@ -10,5 +10,5 @@ Then use nvim
 :PackerSync
 ```
 
-#### FiraCode nerd font for terminal font.
-#### Proxy Setting in .my_env.
+#### Use *fonts* file for terminal font.
+#### Proxy Setting in .my_env.(just for wsl)
