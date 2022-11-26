@@ -57,9 +57,9 @@ nsmap('<F5>', '<cmd>lua require"dap".continue()<cr>')
 nsmap('<F6>',
   '<cmd>lua require"dap".disconnect({ restart = false, terminateDebuggee = null }, require"dapui".close())<cr>')
 
-nsmap('<F10>', '<cmd>lua require"dap".step_over()<cr>')
-nsmap('<F11>', '<cmd>lua require"dap".step_into()<cr>')
-nsmap('<F12>', '<cmd>lua require"dap".step_out()<cr>')
+nsmap('<F7>', '<cmd>lua require"dap".step_over()<cr>')
+nsmap('<F8>', '<cmd>lua require"dap".step_into()<cr>')
+nsmap('<F9>', '<cmd>lua require"dap".step_out()<cr>')
 
 -- leader key
 -- vim window size
