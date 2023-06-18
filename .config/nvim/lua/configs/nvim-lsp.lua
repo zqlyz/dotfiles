@@ -120,21 +120,19 @@ local function on_attach(client, bufnr)
   }, bufnr)
 end
 
--- Setup nvim-lsp-installer
-local servers = { "sumneko_lua", "pyright", "clangd", "tsserver", "html", "cssls", "cmake"}
-require("nvim-lsp-installer").setup {
-  ensure_installed = servers
-}
+-- Setup mason-lspconfig
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = {"lua_ls", "pyright", "clangd", "tsserver", "html", "cssls", "cmake"},
+})
 
-for _, server in ipairs(servers) do
-  if server == 'sumneko_lua' then
-    require('lspconfig')[server].setup {
-      on_attach = on_attach,
-      capabilities = capabilities,
-      flags = {
-        -- This will be the default in neovim 0.7+
-        debounce_text_changes = 150,
-      },
+require("mason-lspconfig").setup_handlers({
+  function (server_name)
+    require("lspconfig")[server_name].setup{}
+  end,
+  -- Next, you can provide targeted overrides for specific servers.
+  ["lua_ls"] = function ()
+    require("lspconfig").lua_ls.setup {
       settings = {
         Lua = {
           runtime = {
@@ -143,7 +141,7 @@ for _, server in ipairs(servers) do
           },
           diagnostics = {
             -- Get the language server to recognize the `vim` global
-            globals = { 'vim' },
+            globals = {'vim'},
           },
           workspace = {
             -- Make the server aware of Neovim runtime files
@@ -152,18 +150,9 @@ for _, server in ipairs(servers) do
           -- Do not send telemetry data containing a randomized but unique identifier
           telemetry = {
             enable = false,
-          }
-        }
-      }
+          },
+        },
+      },
     }
-  else
-    require('lspconfig')[server].setup {
-      on_attach = on_attach,
-      capabilities = capabilities,
-      flags = {
-        -- This will be the default in neovim 0.7+
-        -- debounce_text_changes = 150,
-      }
-    }
-  end
-end
+  end,
+})

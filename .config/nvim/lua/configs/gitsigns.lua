@@ -1,37 +1,16 @@
 require('gitsigns').setup {
   signs = {
-    add          = {hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
-    change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    add          = { text = '│' },
+    change       = { text = '│' },
+    delete       = { text = '_' },
+    topdelete    = { text = '‾' },
+    changedelete = { text = '~' },
+    untracked    = { text = '┆' },
   },
   signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
   numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
   linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
   word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
-  keymaps = {
-    -- Default keymap options
-    noremap = true,
-
-    ['n ]c'] = { expr = true, "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'"},
-    ['n [c'] = { expr = true, "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'"},
-
-    ['n ghs'] = '<cmd>Gitsigns stage_hunk<CR>',
-    ['v ghs'] = ':Gitsigns stage_hunk<CR>',
-    ['n ghu'] = '<cmd>Gitsigns undo_stage_hunk<CR>',
-    ['n ghr'] = '<cmd>Gitsigns reset_hunk<CR>',
-    ['v ghr'] = ':Gitsigns reset_hunk<CR>',
-    ['n ghR'] = '<cmd>Gitsigns reset_buffer<CR>',
-    ['n ghp'] = '<cmd>Gitsigns preview_hunk<CR>',
-    ['n ghb'] = '<cmd>lua require"gitsigns".blame_line{full=true}<CR>',
-    ['n ghS'] = '<cmd>Gitsigns stage_buffer<CR>',
-    ['n ghU'] = '<cmd>Gitsigns reset_buffer_index<CR>',
-
-    -- Text objects
-    ['o ih'] = ':<C-U>Gitsigns select_hunk<CR>',
-    ['x ih'] = ':<C-U>Gitsigns select_hunk<CR>'
-  },
   watch_gitdir = {
     interval = 1000,
     follow_files = true
@@ -44,13 +23,11 @@ require('gitsigns').setup {
     delay = 1000,
     ignore_whitespace = false,
   },
-  current_line_blame_formatter_opts = {
-    relative_time = false
-  },
+  current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
   sign_priority = 6,
   update_debounce = 100,
   status_formatter = nil, -- Use default
-  max_file_length = 40000,
+  max_file_length = 40000, -- Disable if file is longer than this (in lines)
   preview_config = {
     -- Options passed to nvim_open_win
     border = 'single',
@@ -62,4 +39,44 @@ require('gitsigns').setup {
   yadm = {
     enable = false
   },
+--  on_attach = function(bufnr)
+--    local gs = package.loaded.gitsigns
+--
+--    local function map(mode, l, r, opts)
+--      opts = opts or {}
+--      opts.buffer = bufnr
+--      vim.keymap.set(mode, l, r, opts)
+--    end
+--
+--    -- Navigation
+--    map('n', ']c', function()
+--      if vim.wo.diff then return ']c' end
+--      vim.schedule(function() gs.next_hunk() end)
+--      return '<Ignore>'
+--    end, {expr=true})
+--
+--    map('n', '[c', function()
+--      if vim.wo.diff then return '[c' end
+--      vim.schedule(function() gs.prev_hunk() end)
+--      return '<Ignore>'
+--    end, {expr=true})
+--
+--    -- Actions
+--    map('n', 'ghs', gs.stage_hunk)
+--    map('n', 'ghr', gs.reset_hunk)
+--    map('v', 'ghs', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+--    map('v', 'ghr', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+--    map('n', 'ghS', gs.stage_buffer)
+--    map('n', 'ghu', gs.undo_stage_hunk)
+--    map('n', 'ghR', gs.reset_buffer)
+--    map('n', 'ghp', gs.preview_hunk)
+--    map('n', 'ghb', function() gs.blame_line{full=true} end)
+--    map('n', 'gtb', gs.toggle_current_line_blame)
+--    map('n', 'ghd', gs.diffthis)
+--    map('n', 'ghD', function() gs.diffthis('~') end)
+--    map('n', 'gtd', gs.toggle_deleted)
+--
+--    -- Text object
+--    map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+--  end
 }

@@ -2,8 +2,8 @@ vim.o.wrap = false
 
 -- 不换行
 vim.o.termguicolors = true
--- 开启鼠标
-vim.cmd [[set mousem=extend]]
+-- 不开启鼠标
+vim.cmd [[set mouse=]]
 
 -- utf-8
 vim.o.encoding = 'utf-8'
