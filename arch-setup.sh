@@ -29,18 +29,8 @@ down_files() {
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install
 
-  # c/cpp/dust debugger
-  mkdir -p ~/.local/share/nvim/cpptools/
-  cd ~/.local/share/nvim/cpptools/
-  ADDRESS=$(curl -Ls -w "%{url_effective}\n" -o /dev/null https://github.com/microsoft/vscode-cpptools/releases/latest)
-  TAG=$(echo $ADDRESS | sed -n 's/.*\/\(.*\)$/\1/p')
-  wget https://github.com/microsoft/vscode-cpptools/releases/download/$TAG/cpptools-linux.vsix
-  unzip cpptools-linux.vsix
-  chmod +x ~/.local/share/nvim/cpptools/extension/debugAdapters/bin/OpenDebugAD7
-  cd $DIR
-  # python debugger debugpy
-  python -m venv ~/.local/share/nvim/virtualenvs/debugpy
-  ~/.local/share/nvim/virtualenvs/debugpy/bin/python -m pip install debugpy
+  # setting  python_venv
+  python -m venv ~/.local/python_venv/
 }
 
 copy_files() {

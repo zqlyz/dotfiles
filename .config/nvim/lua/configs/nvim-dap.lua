@@ -9,12 +9,12 @@ vim.fn.sign_define('DapStopped', {text='🌕', texthl='', linehl='', numhl=''})
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
-  command = home..'/.local/share/nvim/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
+  command = home..'/.local/share/nvim/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
 }
 
 dap.adapters.python = {
   type = 'executable',
-  command = home..'/.local/share/nvim/virtualenvs/debugpy/bin/python',
+  command = home..'/.local/share/nvim/mason/packages/debugpy/venv/bin/python',
   args = { '-m', 'debugpy.adapter' },
 }
 

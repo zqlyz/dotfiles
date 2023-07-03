@@ -2,13 +2,13 @@
 hostip=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
 port=10808
 # User specific environment
-export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.local/python_venv/bin:$HOME/.local/bin:$HOME/bin:$PATH"
 
 #use neovim
 export EDITOR=nvim
 
 # c/c++ 相关
-export LD_LIBRARY_PATH="/usr/local/lib:/usr/lib:/lib:$LD_LIBRARY_PATH";
+export LD_LIBRARY_PATH="/usr/local/lib:/usr/lib:/lib:/usr/lib/jvm/java-17-openjdk/lib/server/:$LD_LIBRARY_PATH";
 
 # alias
 alias egrep='egrep --color=auto'
