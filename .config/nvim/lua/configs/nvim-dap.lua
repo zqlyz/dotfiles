@@ -87,6 +87,8 @@ dap.configurations.python = {
         return cwd .. '/venv/bin/python'
       elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
         return cwd .. '/.venv/bin/python'
+      elseif vim.fn.executable(home .. '/.local/python_venv/bin/python') == 1 then
+        return home .. '/.local/python_venv/bin/python'
       else
         return '/usr/bin/python'
       end
