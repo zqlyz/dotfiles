@@ -123,7 +123,7 @@ end
 -- Setup mason-lspconfig
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = {"lua_ls", "pyright", "clangd", "tsserver", "html", "cssls", "cmake"},
+  ensure_installed = {"lua_ls", "pyright", "clangd", "tsserver", "html", "cssls", "cmake","kotlin_language_server"},
 })
 
 require("mason-lspconfig").setup_handlers({

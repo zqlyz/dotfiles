@@ -1,6 +1,6 @@
 #!/bin/sh
 hostip=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
-port=10808
+port=1080
 # User specific environment
 export PATH="$HOME/.local/python_venv/bin:$HOME/.local/bin:$HOME/bin:$PATH"
 
