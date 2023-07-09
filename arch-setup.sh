@@ -31,6 +31,9 @@ down_files() {
 
   # setting  python_venv
   python -m venv ~/.local/python_venv/
+  
+  # neovim packer
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 }
 
 copy_files() {
