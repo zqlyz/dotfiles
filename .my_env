@@ -10,6 +10,8 @@ export EDITOR=nvim
 # c/c++ 相关
 export LD_LIBRARY_PATH="/usr/local/lib:/usr/lib:/lib:/usr/lib/jvm/java-17-openjdk/lib/server/:$LD_LIBRARY_PATH";
 
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk/"
+
 # alias
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'

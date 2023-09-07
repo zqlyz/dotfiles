@@ -18,7 +18,8 @@ down_files() {
   sudo pacman -Syu --noconfirm \
               zsh ranger fzf neovim cmake feh lua wget curl llvm python ca-certificates \
               xclip man-db unzip npm highlight tmux clang ninja make wqy-zenhei\
-              openssh openssl ctags net-tools htop gdb ripgrep gzip python-pip
+              openssh openssl ctags net-tools htop gdb ripgrep gzip python-pip jdk17-openjdk \
+              kotlin
 
   # zsh-plugins
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
@@ -53,7 +54,7 @@ copy_files() {
 
   ln -sf $DIR/.config/* ~/.config/
   mkdir -p ~/.local/bin/
-  ln -sf $(which nvim) ~/.local/bin/vim
+  ln -sf /usr/bin/nvim ~/.local/bin/vim
   zsh
   chsh -s /bin/zsh
 }
