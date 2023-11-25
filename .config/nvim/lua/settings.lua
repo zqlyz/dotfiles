@@ -9,8 +9,8 @@ vim.cmd [[set mouse=]]
 vim.o.encoding = 'utf-8'
 
 -- 设置缩进大小
-vim.o.softtabstop = 2
-vim.o.shiftwidth = 2
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
 
 -- <C-v><tab>可以使用原始tab
 vim.o.expandtab = true
