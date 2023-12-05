@@ -34,20 +34,24 @@ nmap('<m-left>', '<cmd>vertical resize -1<cr>')
 nmap('<m-right>', '<cmd>vertical resize +1<cr>')
 
 --treesitter
-nsmap('ff', '<cmd>Telescope find_files<cr>')
-nsmap('fg', '<cmd>Telescope live_grep<cr>')
-nsmap('fb', '<cmd>Telescope buffers<cr>')
-nsmap('fh', '<cmd>Telescope help_tags<cr>')
+nsmap('<leader>p', '<cmd>Telescope find_files<cr>')
+nsmap('<leader>o', '<cmd>Telescope live_grep<cr>')
+nsmap('<leader>i', '<cmd>Telescope help_tags<cr>')
 -- bufferline
-nsmap('ft', '<cmd>BufferLinePick<cr>')
+nsmap('<c-pageup>', '<cmd>BufferLineCyclePrev<cr>')
+nsmap('<c-pagedown>', '<cmd>BufferLineCycleNext<cr>')
 
 -- motion
-nsmap('fl', '<cmd>HopLine<cr>')
-nsmap('fw', '<cmd>HopWord<cr>')
+-- nsmap('fl', '<cmd>HopLine<cr>')
+nsmap('<leader><leader>w', '<cmd>HopWord<cr>')
+nsmap('<leader><leader>l', '<cmd>HopLine<cr>')
+nsmap('<leader><leader>s', '<cmd>HopChar1<cr>')
 
+nsmap('<leader>/', '<cmd>nohlsearch<cr>')
 -- lsp keybindings in configs/nvim-lsp.lua, not here.
 -- toggletrem keybindings in configs/toggletrem.lua, not here.
 -- gitsigns keybindings in configs/gitsigns.ula, not here
+
 
 
 nsmap('<F2>', '<cmd>NvimTreeToggle<cr>') -- tree
@@ -57,9 +61,9 @@ nsmap('<F5>', '<cmd>lua require"dap".continue()<cr>')
 nsmap('<F6>',
   '<cmd>lua require"dap".disconnect({ restart = false, terminateDebuggee = null }, require"dapui".close())<cr>')
 
-nsmap('<F7>', '<cmd>lua require"dap".step_over()<cr>')
-nsmap('<F8>', '<cmd>lua require"dap".step_into()<cr>')
-nsmap('<F9>', '<cmd>lua require"dap".step_out()<cr>')
+nsmap('<F10>', '<cmd>lua require"dap".step_over()<cr>')
+nsmap('<F11>', '<cmd>lua require"dap".step_into()<cr>')
+nsmap('<F12>', '<cmd>lua require"dap".step_out()<cr>')
 
 -- leader key
 -- vim window size
@@ -73,8 +77,7 @@ nmap('<leader>K', '<c-w>K')
 nmap('<leader>L', '<c-w>L')
 
 -- Breakpoint
-nsmap('<leader>b', '<cmd>lua require"dap".toggle_breakpoint()<cr>')
-nsmap('<leader>B', '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>')
+nsmap('<F9>', '<cmd>lua require"dap".toggle_breakpoint()<cr>')
 
 local wk = require('which-key')
 
@@ -88,8 +91,9 @@ wk.register({
   ["K"] = "which_key_ignore",
   ["L"] = "which_key_ignore",
   ["b"] = "Toggle Breakpoint",
-  ["B"] = "Toggle Condition Breakpoint",
 }, { mode = 'n', prefix = '<leader>' })
+
+wk.register({}, { mode = 'n', prefix = 'f' })
 
 vim.cmd [[imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>']]
 vim.cmd [[smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>']]

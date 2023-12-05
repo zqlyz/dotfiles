@@ -9,6 +9,7 @@ vim.cmd [[set mouse=]]
 vim.o.encoding = 'utf-8'
 
 -- 设置缩进大小
+vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 
