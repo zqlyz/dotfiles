@@ -19,7 +19,7 @@ down_files() {
               zsh ranger fzf neovim cmake feh lua wget curl llvm python ca-certificates \
               xclip man-db unzip npm highlight tmux clang ninja make wqy-zenhei\
               openssh openssl ctags net-tools htop gdb ripgrep gzip python-pip jdk17-openjdk \
-              kotlin
+              kotlin iftop
 
   # zsh-plugins
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k

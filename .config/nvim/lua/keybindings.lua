@@ -43,9 +43,7 @@ nsmap('<c-pagedown>', '<cmd>BufferLineCycleNext<cr>')
 
 -- motion
 -- nsmap('fl', '<cmd>HopLine<cr>')
-nsmap('<leader><leader>w', '<cmd>HopWord<cr>')
-nsmap('<leader><leader>l', '<cmd>HopLine<cr>')
-nsmap('<leader><leader>s', '<cmd>HopChar1<cr>')
+nsmap('s', '<cmd>HopChar1<cr>')
 
 nsmap('<leader>/', '<cmd>nohlsearch<cr>')
 -- lsp keybindings in configs/nvim-lsp.lua, not here.
